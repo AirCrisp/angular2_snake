@@ -1,0 +1,17 @@
+<md-grid-list cols="20" class="matrix" #matrix
+    (swipeleft)="swipe($event.type)"
+    (swiperight)="swipe($event.type)"
+    (swipeup)="swipe($event.type)"
+    (swipedown)="swipe($event.type)">
+    <md-grid-tile-header>Score: {{score}}</md-grid-tile-header>
+<!--    <md-grid-tile *cRepeat="rows*cols" rowHeight="1:1" class="cell" [ngClass]="{'on': isClassVisible }"></md-grid-tile> -->
+    <md-grid-tile *ngFor="let item of matrixBody; let i = index" 
+        rowHeight="1:1" class="cell" 
+        [ngClass]="{'on': cellIsOn(i), 'apple': cellIsApple(i) }"></md-grid-tile>
+    <div class="button_layer" #buttonLayer>
+        <button md-fab class="new" (click)="gameStart()"><md-icon>play_arrow</md-icon><span>New game</span></button>
+        <button md-fab class="resume hide" (click)="gamePause()"><md-icon>pause</md-icon><span>Resume</span></button>
+        <div class="dead hide"><span>Snake is DEAD!</span></div>
+    </div>
+</md-grid-list>
+<button md-raised-button (click)="gamePause()" #pause class="hide"><md-icon>pause</md-icon><span>Pause</span></button>

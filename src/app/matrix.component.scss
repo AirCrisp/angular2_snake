@@ -1,0 +1,104 @@
+@keyframes dead {
+    100%  {
+        top: 0%;
+        opacity: 0;
+        }
+}
+
+.hide {
+    display:none;
+}
+
+md-grid-tile {
+    border: 1px solid #999;
+}
+
+md-grid-list {
+    max-width:400px;
+    min-width: 200px;
+    margin: auto;
+}
+.on
+{
+	background-color: red;
+}
+
+.apple
+{
+	background-color:green;
+}
+
+.button_layer {
+    width: calc(100% + 1px);
+    padding-bottom: calc(100% + 1px);
+    position:absolute;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+button md-icon {
+    display:none;
+}
+
+.mat-button-wrapper {
+    width: 100%;
+    display: block;
+}
+
+.mat-fab .mat-icon {
+    padding:0;
+    margin: auto;
+}
+
+.mat-fab {
+    box-shadow: 0 3px 5px -1px rgba(0,0,0,.4),0 6px 10px 0 rgba(0,0,0,.28),0 1px 18px 0 rgba(0,0,0,.24);
+}
+
+.new, .resume {
+    position:absolute;
+    top: 35%;
+    left:40%;
+    width: 20%;
+    height:20%;
+    text-align:center;
+}
+
+.mat-raised-button {
+    margin-top:10px;
+}
+
+.mat-raised-button md-icon {
+    margin: auto;
+}
+
+.dead {
+    color: red;
+    position: absolute;
+    top: 45%;
+    width: 100%;
+    text-transform: uppercase;
+    animation-name: dead;
+    animation-duration: 4s;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-in;
+    animation-delay: 1s;
+}
+
+.dead span {
+    margin: auto;
+}
+
+@media (min-width: 400px) {
+  md-grid-list {
+    padding-bottom: 400px !important;
+  }
+}
+
+@media (max-width: 360px) {
+    button span {
+        display: none;
+    }
+
+    button md-icon {
+        display: block;
+    }
+}
